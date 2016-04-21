@@ -8,7 +8,7 @@ module.exports = function(defaults) {
   });
 
   app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js');
-  app.import('bower_components/Chart.js/dist/Chart.bundle.js');
+  app.import('vendor/Chart.js');
 
   return app.toTree();
 };
