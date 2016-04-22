@@ -92,7 +92,7 @@ export default Em.Component.extend({
     if (tooltip.body) {
       var innerHtml = '';
       this._data.datasets.forEach((item)=>{
-        innerHtml += ('<div class="circle" style="background: ' + item.backgroundColor + '"></div>' + item.label + ': ' + item.data[this._active[0]._index] + ' logins<br>');
+        innerHtml += ('<div class="circle" style="background: ' + item.backgroundColor + '"></div>' + item.label + '<br>' + '<div class="logins-row">' + item.data[this._active[0]._index] + ' logins</div>');
       });
       tooltipEl.html(innerHtml);
     }
@@ -117,7 +117,7 @@ export default Em.Component.extend({
       fontFamily: tooltip._fontFamily,
       fontSize: tooltip.fontSize,
       fontStyle: tooltip._fontStyle,
-      padding: tooltip.yPadding + 'px ' + tooltip.xPadding + 'px'
+      padding: '15px'
     });
   },
   
@@ -144,7 +144,7 @@ export default Em.Component.extend({
         elements: {
           point: {
             radius: 0,
-            hoverRadius: 6,
+            hoverRadius: 4,
             hitRadius: 20
           }
         },
@@ -155,6 +155,9 @@ export default Em.Component.extend({
         scales: {
           xAxes: [
             {
+              gridLines: {
+                display: false
+              },
               ticks: {
                 display: false
               }
